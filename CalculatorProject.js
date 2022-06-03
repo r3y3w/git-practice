@@ -8,7 +8,7 @@ The purpuse of this program, is:
 
 1. Provide an intro for the Math Calculator 
 2. Ask for a User Name
-3. Ask for 2 values to use in a basic math operation (i.e. sum, substract, 
+3. Ask for 2 values to use in a basic math operation (i.e. sum, subtract, 
     multiplcation, division).
 4. Return the result of the math Operation
 5. Ask user if they wan to either run again, or exit
