@@ -17,85 +17,93 @@ The purpuse of this program, is:
 
 //mySelection function
 function mySelectionMenu() {
-    console.log(`Type number a for your selected operation`)
-    console.log(`| 1 | for Summation`)
-    console.log(`| 2 | for Subtraction`)
-    console.log(`| 3 | for Multiplication`)
-    console.log(`| 4 | For Division`)
-    }
-
+  console.log(`Type number a for your selected operation`);
+  console.log(`| 1 | for Summation`);
+  console.log(`| 2 | for Subtraction`);
+  console.log(`| 3 | for Multiplication`);
+  console.log(`| 4 | For Division`);
+}
 
 // Intro
 
-console.log("Welcome to Node CLI Calculator App")
-console.log("")
-console.log("Please read the acceptance criteria to get started.")
+console.log("Welcome to Node CLI Calculator App");
+console.log("");
+console.log("Please read the acceptance criteria to get started.");
 // -> Question ???? What is the acceptance criterua?  How should be written?
 
-
 // Ask for user name
-const prompt = require('prompt-sync')()
-const userName = prompt('What is your name? --> ')
-console.log(`Hey there ${userName}`)
+const prompt = require("prompt-sync")();
+const userName = prompt("What is your name? --> ");
+console.log(`Hey there ${userName}`);
 
-//Ask what a operation they wat to complete
-console.log(`${userName}, Which Math Operation you want to do?`)
+let promptCounter = 1;
 
-mySelectionMenu(userName)
+while (promptCounter > 0) {
+  //Ask what a operation they wat to complete
+  console.log(`${userName}, Which Math Operation you want to do?`);
 
+  mySelectionMenu(userName);
 
-//enter selection
-let myMathOperations = prompt(' Enter your selection -->  ')
-    switch(myMathOperations) {
+  //enter selection
+  let myMathOperations = prompt(" Enter your selection -->  ");
+  switch (myMathOperations) {
+    case "1":
+      console.log("SUM Operation in Progress...");
+      let totalSumValue = 0;
+      // Ask user for first number
+      let firstSumValue = prompt(" Enter First Number Value-->  ");
+      // Ask user for second number
+      let secondSumValue = prompt(" Enter Second Number Value -->  ");
+      // Complete operation / display output
+      totalSumValue = Number(firstSumValue) + Number(secondSumValue); // using Number() to avoid concatenation
+      console.log(totalSumValue);
+      break;
 
-        case '1':
-                console.log('SUM Operation in Progress...')
-                let totalSumValue = 0
-                // Ask user for first number
-                let firstSumValue = prompt(' Enter First Number Value-->  ')
-                // Ask user for second number
-                let secondSumValue = prompt(' Enter Second Number Value -->  ')
-                // Complete operation / display output
-                totalSumValue = Number(firstSumValue) + Number(secondSumValue) // using Number() to avoid concatenation
-                console.log(totalSumValue)
-                break
+    case "2":
+      console.log("SUB Operation in Progress...");
+      let totalSubValue = 0;
+      // Ask user for first number
+      let firstSubValue = prompt(" Enter First Number Value-->  ");
+      // Ask user for second number
+      let secondSubValue = prompt(" Enter Second Number Value -->  ");
+      // Complete operation / display output
+      totalSubValue = firstSubValue - secondSubValue;
+      console.log(totalSubValue);
+      break;
+    case "3":
+      console.log("MULT Operation in Progress...");
+      let totalMultValue = 0;
+      // Ask user for first number
+      let firstMultValue = prompt(" Enter First Number Value-->  ");
+      // Ask user for second number
+      let secondMultValue = prompt(" Enter Second Number Value -->  ");
+      // Complete operation / display output
+      totalMultValue = firstMultValue * secondMultValue;
+      console.log(totalMultValue);
+      break;
+    case "4":
+      console.log("DIV");
+      let totalDivValue = 0;
+      // Ask user for first number
+      let firstDivValue = prompt(" Enter First Number Value-->  ");
+      // Ask user for second number
+      let secondDivValue = prompt(" Enter Second Number Value -->  ");
+      // Complete operation / display output
+      totalDivValue = firstDivValue / secondDivValue;
+      console.log(totalDivValue);
 
-        case '2':
-                console.log('SUB Operation in Progress...')
-                let totalSubValue = 0
-                // Ask user for first number
-                let firstSubValue = prompt(' Enter First Number Value-->  ')
-                // Ask user for second number
-                let secondSubValue = prompt(' Enter Second Number Value -->  ')
-                // Complete operation / display output
-                totalSubValue = (firstSubValue - secondSubValue)
-                console.log(totalSubValue)           
-                break
-        case '3':
-                console.log('MULT Operation in Progress...')
-                let totalMultValue = 0
-                // Ask user for first number
-                let firstMultValue = prompt(' Enter First Number Value-->  ')
-                // Ask user for second number
-                let secondMultValue = prompt(' Enter Second Number Value -->  ')
-                // Complete operation / display output
-                totalMultValue = (firstMultValue * secondMultValue)
-                console.log(totalMultValue)        
-                break
-        case '4':
-                console.log('DIV')
-                let totalDivValue = 0
-                // Ask user for first number
-                let firstDivValue = prompt(' Enter First Number Value-->  ')
-                // Ask user for second number
-                let secondDivValue = prompt(' Enter Second Number Value -->  ')
-                // Complete operation / display output
-                totalDivValue = (firstDivValue / secondDivValue)
-                console.log(totalDivValue) 
-
-        default :
-                console.log('No Math Operation Completed') 
-    }
+    default:
+      console.log("No Math Operation Completed");
+  }
+  const repeatPrompt = prompt("Would you like to continue? y/n  -->  ");
+  if (repeatPrompt === "y" || repeatPrompt === "Y") {
+    promptCounter += 1;
+  } else {
+    promptCounter = 0;
+  }
+}
 
 // exit statement
-console.log(`Thanks ${userName} for using the CLI Math Calculator. Have a nice Day :)  `)
+console.log(
+  `Thanks ${userName} for using the CLI Math Calculator. Have a nice Day :)  `
+);
