@@ -15,6 +15,16 @@ The purpuse of this program, is:
 6. If the selection was to exit, provide an exit statement
 */
 
+//mySelection function
+function mySelectionMenu() {
+    console.log(`Type number a for your selected operation`)
+    console.log(`| 1 | for Summation`)
+    console.log(`| 2 | for Subtraction`)
+    console.log(`| 3 | for Multiplication`)
+    console.log(`| 4 | For Division`)
+    }
+
+
 // Intro
 
 console.log("Welcome to Node CLI Calculator App")
@@ -24,34 +34,68 @@ console.log("Please read the acceptance criteria to get started.")
 
 
 // Ask for user name
-
 const prompt = require('prompt-sync')()
 const userName = prompt('What is your name? --> ')
 console.log(`Hey there ${userName}`)
 
-// Ask what a operation they wat to complete
+//Ask what a operation they wat to complete
+console.log(`${userName}, Which Math Operation you want to do?`)
 
-    // 1. Console.log Which math Operation you would like to do?
-            // 1. for SUM, 2. For Substract 3. for Multiplication  4.Division  5. Exit 
-            
-    // 2. Start a Case Switch 
-            // input option
-            
-// Ask user for first number
-    // store as numVal1 
-
-// Ask user for second number
-    // store as numVal2
+mySelectionMenu(userName)
 
 
-// Complete operation / display output
+//enter selection
+let myMathOperations = prompt(' Enter your selection -->  ')
+    switch(myMathOperations) {
 
-    // output result
+        case '1':
+                console.log('SUM Operation in Progress...')
+                let totalSumValue = 0
+                // Ask user for first number
+                let firstSumValue = prompt(' Enter First Number Value-->  ')
+                // Ask user for second number
+                let secondSumValue = prompt(' Enter Second Number Value -->  ')
+                // Complete operation / display output
+                totalSumValue = Number(firstSumValue) + Number(secondSumValue) // using Number() to avoid concatenation
+                console.log(totalSumValue)
+                break
 
-// Ask user if they want to run again or exit
+        case '2':
+                console.log('SUB Operation in Progress...')
+                let totalSubValue = 0
+                // Ask user for first number
+                let firstSubValue = prompt(' Enter First Number Value-->  ')
+                // Ask user for second number
+                let secondSubValue = prompt(' Enter Second Number Value -->  ')
+                // Complete operation / display output
+                totalSubValue = (firstSubValue - secondSubValue)
+                console.log(totalSubValue)           
+                break
+        case '3':
+                console.log('MULT Operation in Progress...')
+                let totalMultValue = 0
+                // Ask user for first number
+                let firstMultValue = prompt(' Enter First Number Value-->  ')
+                // Ask user for second number
+                let secondMultValue = prompt(' Enter Second Number Value -->  ')
+                // Complete operation / display output
+                totalMultValue = (firstMultValue * secondMultValue)
+                console.log(totalMultValue)        
+                break
+        case '4':
+                console.log('DIV')
+                let totalDivValue = 0
+                // Ask user for first number
+                let firstDivValue = prompt(' Enter First Number Value-->  ')
+                // Ask user for second number
+                let secondDivValue = prompt(' Enter Second Number Value -->  ')
+                // Complete operation / display output
+                totalDivValue = (firstDivValue / secondDivValue)
+                console.log(totalDivValue) 
 
-     // input 1 to run again, any other value to exit
+        default :
+                console.log('No Math Operation Completed') 
+    }
 
 // exit statement
-
-//  thanks username for using the CLI Math Calculator
+console.log(`Thanks ${userName} for using the CLI Math Calculator. Have a nice Day :)  `)
