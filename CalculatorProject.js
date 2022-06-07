@@ -5,17 +5,16 @@ Student: Rafael Reyes
 Command Line interface (CLI) Math Calculator
 
 The purpuse of this program, is:
-
 1. Provide an intro for the Math Calculator 
 2. Ask for a User Name
 3. Ask for 2 values to use in a basic math operation (i.e. sum, subtract, 
     multiplcation, division).
 4. Return the result of the math Operation
-5. Ask user if they wan to either run again, or exit
+5. Ask user if they want to either run again, or exit
 6. If the selection was to exit, provide an exit statement
 */
 
-//mySelection function
+//mySelectionMenu function
 function mySelectionMenu() {
   console.log(`Type number a for your selected operation`);
   console.log(`| 1 | for Summation`);
@@ -29,7 +28,7 @@ function mySelectionMenu() {
 console.log("Welcome to Node CLI Calculator App");
 console.log("");
 console.log("Please read the acceptance criteria to get started.");
-// -> Question ???? What is the acceptance criterua?  How should be written?
+// -> Question ???? What is the acceptance critera?  How should be written?
 
 // Ask for user name
 const prompt = require("prompt-sync")();
