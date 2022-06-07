@@ -17,10 +17,11 @@ The purpuse of this program, is:
 //mySelectionMenu function
 function mySelectionMenu() {
   console.log(`Type number a for your selected operation`);
-  console.log(`| 1 | for Summation`);
-  console.log(`| 2 | for Subtraction`);
-  console.log(`| 3 | for Multiplication`);
+  console.log(`| 1 | For Summation`);
+  console.log(`| 2 | For Subtraction`);
+  console.log(`| 3 | For Multiplication`);
   console.log(`| 4 | For Division`);
+  console.log(`| 5 | To Cancel`);
 }
 
 // Intro
@@ -32,7 +33,7 @@ console.log("Please read the acceptance criteria to get started.");
 
 // Ask for user name
 const prompt = require("prompt-sync")();
-const userName = prompt("What is your name? --> ");
+const userName = prompt("What is your Username? --> ");
 console.log(`Hey there ${userName}`);
 
 let promptCounter = 1;
@@ -55,7 +56,7 @@ while (promptCounter > 0) {
       let secondSumValue = prompt(" Enter Second Number Value -->  ");
       // Complete operation / display output
       totalSumValue = Number(firstSumValue) + Number(secondSumValue); // using Number() to avoid concatenation
-      console.log(totalSumValue);
+      console.log(`${userName}'s SUM Operation is...    ${firstSumValue} + ${secondSumValue} = ${totalSumValue}`);
       break;
 
     case "2":
@@ -67,7 +68,7 @@ while (promptCounter > 0) {
       let secondSubValue = prompt(" Enter Second Number Value -->  ");
       // Complete operation / display output
       totalSubValue = firstSubValue - secondSubValue;
-      console.log(totalSubValue);
+      console.log(`${userName}'s SUB Operation is...    ${firstSubValue} - ${secondSubValue} = ${totalSubValue}`);
       break;
     case "3":
       console.log("MULT Operation in Progress...");
@@ -77,11 +78,11 @@ while (promptCounter > 0) {
       // Ask user for second number
       let secondMultValue = prompt(" Enter Second Number Value -->  ");
       // Complete operation / display output
-      totalMultValue = firstMultValue * secondMultValue;
-      console.log(totalMultValue);
+      totalMultValue = firstMultValue * firstMultValue;
+      console.log(`${userName}'s MULT Operation is...    ${firstMultValue} X ${firstMultValue} = ${totalMultValue}`);
       break;
     case "4":
-      console.log("DIV");
+      console.log("DIV Operation in Progress...");
       let totalDivValue = 0;
       // Ask user for first number
       let firstDivValue = prompt(" Enter First Number Value-->  ");
@@ -89,10 +90,13 @@ while (promptCounter > 0) {
       let secondDivValue = prompt(" Enter Second Number Value -->  ");
       // Complete operation / display output
       totalDivValue = firstDivValue / secondDivValue;
-      console.log(totalDivValue);
-
-    default:
+      console.log(`${userName}'s MULT Operation is...    ${firstDivValue} / ${secondDivValue} = ${totalDivValue}`);
+      break
+    case "5":
       console.log("No Math Operation Completed");
+      break
+    default :
+    console.log("No Math Operation Completed")
   }
   const repeatPrompt = prompt("Would you like to continue? y/n  -->  ");
   if (repeatPrompt === "y" || repeatPrompt === "Y") {
